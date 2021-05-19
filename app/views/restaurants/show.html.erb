@@ -6,7 +6,8 @@
 <br>
 <h3>Reviews</h3>
 <% @restaurant.reviews.each do |review| %>
-<p><%= review.content %> Rating: <%= review.rating %></p>
+<p><%= review.content %> Rating: <%= review.rating %>
+<%= link_to "Delete", review_path(review), method: :delete, data: {confirm: "Are you sure?"} %></p>
 <% end %>
 
 <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
